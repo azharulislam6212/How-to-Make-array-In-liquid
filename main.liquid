@@ -1,0 +1,13 @@
+                      {%- capture items -%}
+                              {%- for item in cart.items -%}
+                                  {{- item.product.id -}},
+                              {%- endfor -%}
+                          {%- endcapture -%}
+
+                          {% assign items_array = items | split: ',' %}
+
+                          {% for item in items_array %}
+
+                            {{ item }}
+                            
+                          {% endfor %}
